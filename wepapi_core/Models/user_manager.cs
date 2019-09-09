@@ -3,56 +3,39 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 
-namespace RecruitmentMasterApi.Models
+namespace wepapi_core.Models
 {
-    public class user_manager : IEquatable<user_manager>
+    public class user_manager
     {
-        public IEnumerable<user_manager> users { get; set; }
-        public override int GetHashCode()
-        {
-            unchecked
-            {
-                var hashCode = (p_id != null ? p_id.GetHashCode() : 0);
-                hashCode = (hashCode * 397) ^ (p_f_name != null ? p_f_name.GetHashCode() : 0);
-                hashCode = (hashCode * 397) ^ (p_m_name != null ? p_m_name.GetHashCode() : 0);
-                hashCode = (hashCode * 397) ^ (p_l_name != null ? p_l_name.GetHashCode() : 0);
-                hashCode = (hashCode * 397) ^ (p_p_address != null ? p_p_address.GetHashCode() : 0);
-                hashCode = (hashCode * 397) ^ (p_l_address != null ? p_l_address.GetHashCode() : 0);
-                hashCode = (hashCode * 397) ^ (p_email != null ? p_email.GetHashCode() : 0);
-                hashCode = (hashCode * 397) ^ (p_phone != null ? p_phone.GetHashCode() : 0);
-                return hashCode;
-            }
-        }
-
         public user_manager()
         {
         }
 
-        public user_manager(string p_id, string p_f_name, string p_m_name, string p_l_name, string p_p_address, string p_l_address, string p_email, string p_phone)
+        public user_manager(string id, string f_name, string m_name, string l_name, string p_address, string l_address, string email, string phone)
         {
-            this.p_id = p_id;
-            this.p_f_name = p_f_name;
-            this.p_m_name = p_m_name;
-            this.p_l_name = p_l_name;
-            this.p_p_address = p_p_address;
-            this.p_l_address = p_l_address;
-            this.p_email = p_email;
-            this.p_phone = p_phone;
+            this.id = id;
+            this.f_name = f_name;
+            this.m_name = m_name;
+            this.l_name = l_name;
+            this.p_address = p_address;
+            this.l_address = l_address;
+            this.email = email;
+            this.phone = phone;
         }
 
-        public user_manager(string p_id)
+        public user_manager(string id)
         {
-            this.p_id = p_id;
+            this.id = id;
         }
 
-        public string p_id { get; set; }
-        public string p_f_name { get; set; }
-        public string p_m_name { get; set; }
-        public string p_l_name { get; set; }
-        public string p_p_address { get; set; }
-        public string p_l_address { get; set; }
-        public string p_email { get; set; }
-        public string p_phone { get; set; }
+        public string id { get; set; }
+        public string f_name { get; set; }
+        public string m_name { get; set; }
+        public string l_name { get; set; }
+        public string p_address { get; set; }
+        public string l_address { get; set; }
+        public string email { get; set; }
+        public string phone { get; set; }
 
         public override bool Equals(object obj)
         {
@@ -62,14 +45,14 @@ namespace RecruitmentMasterApi.Models
         public bool Equals(user_manager other)
         {
             return other != null &&
-                   p_id == other.p_id &&
-                   p_f_name == other.p_f_name &&
-                   p_m_name == other.p_m_name &&
-                   p_l_name == other.p_l_name &&
-                   p_p_address == other.p_p_address &&
-                   p_l_address == other.p_l_address &&
-                   p_email == other.p_email &&
-                   p_phone == other.p_phone;
+                   id == other.id &&
+                   f_name == other.f_name &&
+                   m_name == other.m_name &&
+                   l_name == other.l_name &&
+                   p_address == other.p_address &&
+                   l_address == other.l_address &&
+                   email == other.email &&
+                   phone == other.phone;
         }
 
         public override string ToString()

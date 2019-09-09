@@ -5,7 +5,7 @@ using System.Threading.Tasks;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
-using RecruitmentMasterApi.Models;
+using wepapi_core.Models;
 
 namespace wepapi_core.Controllers
 {
@@ -78,7 +78,7 @@ namespace wepapi_core.Controllers
             _context.employee_recruit.Add(employee_recruit);
             await _context.SaveChangesAsync();
 
-            return CreatedAtAction("Getemployee_recruit", new { id = employee_recruit.Id }, employee_recruit);
+            return CreatedAtAction($"Getemployee_recruit", new { id = employee_recruit.Id }, employee_recruit);
         }
 
         // DELETE: api/employee_recruit/5

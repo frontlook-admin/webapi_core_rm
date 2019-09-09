@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 
-namespace RecruitmentMasterApi.Models
+namespace wepapi_core.Models
 {
     public class employeeParameters
     {

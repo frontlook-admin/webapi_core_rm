@@ -5,7 +5,7 @@ using System.Threading.Tasks;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.DependencyInjection;
-using RecruitmentMasterApi.Models;
+using wepapi_core.Models;
 
 namespace wepapi_core.Data
 {

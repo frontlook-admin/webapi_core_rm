@@ -7,7 +7,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace RecruitmentMasterApi.Models
+namespace wepapi_core.Models
 {
     using System;
     using System.Collections.Generic;

@@ -2,23 +2,87 @@
 using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
-using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
-using RecruitmentMasterApi.Models;
+using wepapi_core.Models;
 
-namespace wepapi_core.Data.Migration
+namespace wepapi_core.Data.migration_helper
 {
     [DbContext(typeof(employmentEntities))]
-    [Migration("20190908175421_InitialCreate")]
-    partial class InitialCreate
+    partial class employmentEntitiesModelSnapshot : ModelSnapshot
     {
-        protected override void BuildTargetModel(ModelBuilder modelBuilder)
+        protected override void BuildModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
                 .HasAnnotation("ProductVersion", "2.2.6-servicing-10079");
 
-            modelBuilder.Entity("RecruitmentMasterApi.Models.employee_recruit", b =>
+            modelBuilder.Entity("wepapi_core.Models.employee_manager", b =>
+                {
+                    b.Property<string>("Id")
+                        .ValueGeneratedOnAdd();
+
+                    b.Property<DateTime?>("addhoc_from_date");
+
+                    b.Property<string>("addhoc_net_salary");
+
+                    b.Property<string>("addhoc_tenure");
+
+                    b.Property<DateTime?>("addhoc_to_date");
+
+                    b.Property<string>("adr1");
+
+                    b.Property<string>("adr2");
+
+                    b.Property<string>("adr3");
+
+                    b.Property<string>("city");
+
+                    b.Property<DateTime?>("dated");
+
+                    b.Property<string>("dispatch_no");
+
+                    b.Property<string>("employment_type");
+
+                    b.Property<string>("f_name");
+
+                    b.Property<string>("gen_applied_post");
+
+                    b.Property<string>("gen_basic_pay");
+
+                    b.Property<string>("gen_pay_scale_level");
+
+                    b.Property<string>("gen_payscale");
+
+                    b.Property<DateTime?>("interview_date");
+
+                    b.Property<long?>("intv_no");
+
+                    b.Property<DateTime?>("join_date");
+
+                    b.Property<string>("l_name");
+
+                    b.Property<string>("m_name");
+
+                    b.Property<string>("online_diary_no");
+
+                    b.Property<string>("pin");
+
+                    b.Property<string>("qualification");
+
+                    b.Property<string>("school");
+
+                    b.Property<string>("st_name");
+
+                    b.Property<string>("st_no");
+
+                    b.Property<string>("state");
+
+                    b.HasKey("Id");
+
+                    b.ToTable("employee_manager");
+                });
+
+            modelBuilder.Entity("wepapi_core.Models.employee_recruit", b =>
                 {
                     b.Property<string>("Id")
                         .ValueGeneratedOnAdd();
@@ -84,7 +148,7 @@ namespace wepapi_core.Data.Migration
                     b.ToTable("employee_recruit");
                 });
 
-            modelBuilder.Entity("RecruitmentMasterApi.Models.user", b =>
+            modelBuilder.Entity("wepapi_core.Models.user", b =>
                 {
                     b.Property<string>("id")
                         .ValueGeneratedOnAdd();
@@ -108,7 +172,31 @@ namespace wepapi_core.Data.Migration
                     b.ToTable("users");
                 });
 
-            modelBuilder.Entity("RecruitmentMasterApi.Models.version", b =>
+            modelBuilder.Entity("wepapi_core.Models.user_manager", b =>
+                {
+                    b.Property<string>("id")
+                        .ValueGeneratedOnAdd();
+
+                    b.Property<string>("email");
+
+                    b.Property<string>("f_name");
+
+                    b.Property<string>("l_address");
+
+                    b.Property<string>("l_name");
+
+                    b.Property<string>("m_name");
+
+                    b.Property<string>("p_address");
+
+                    b.Property<string>("phone");
+
+                    b.HasKey("id");
+
+                    b.ToTable("user_manager");
+                });
+
+            modelBuilder.Entity("wepapi_core.Models.version", b =>
                 {
                     b.Property<int>("id")
                         .ValueGeneratedOnAdd();
