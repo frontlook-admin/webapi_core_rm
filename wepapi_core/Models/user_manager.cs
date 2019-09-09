@@ -36,38 +36,5 @@ namespace wepapi_core.Models
         public string l_address { get; set; }
         public string email { get; set; }
         public string phone { get; set; }
-
-        public override bool Equals(object obj)
-        {
-            return Equals(obj as user_manager);
-        }
-
-        public bool Equals(user_manager other)
-        {
-            return other != null &&
-                   id == other.id &&
-                   f_name == other.f_name &&
-                   m_name == other.m_name &&
-                   l_name == other.l_name &&
-                   p_address == other.p_address &&
-                   l_address == other.l_address &&
-                   email == other.email &&
-                   phone == other.phone;
-        }
-
-        public override string ToString()
-        {
-            return base.ToString();
-        }
-
-        public static bool operator ==(user_manager manager1, user_manager manager2)
-        {
-            return EqualityComparer<user_manager>.Default.Equals(manager1, manager2);
-        }
-
-        public static bool operator !=(user_manager manager1, user_manager manager2)
-        {
-            return !(manager1 == manager2);
-        }
     }
 }

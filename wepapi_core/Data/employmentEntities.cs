@@ -32,8 +32,8 @@ namespace wepapi_core.Models
         public DbSet<employee_recruit> employee_recruit { get; set; }
         public DbSet<user> users { get; set; }
         public DbSet<version> versions { get; set; }
-        public DbSet<wepapi_core.Models.employee_manager> employee_manager { get; set; }
-        public DbSet<wepapi_core.Models.user_manager> user_manager { get; set; }
+        public DbSet<employee_manager> employee_manager { get; set; }
+        public DbSet<user_manager> user_manager { get; set; }
         
     }
 }
