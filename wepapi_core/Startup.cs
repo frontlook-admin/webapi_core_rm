@@ -6,10 +6,13 @@ using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.HttpsPolicy;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Logging;
 using Microsoft.Extensions.Options;
+using RecruitmentMasterApi.Models;
+using wepapi_core.Data;
 
 namespace wepapi_core
 {
@@ -25,6 +28,8 @@ namespace wepapi_core
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
+            services.AddDbContext<employmentEntities>(
+                options => options.UseMySQL(Configuration.GetConnectionString("cs")));
             services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_2);
         }
 
@@ -43,6 +48,7 @@ namespace wepapi_core
 
             app.UseHttpsRedirection();
             app.UseMvc();
+            GetMySqlData.Initialize(app);
         }
     }
 }
