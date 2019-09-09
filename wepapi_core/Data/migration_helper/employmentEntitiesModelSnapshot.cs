@@ -21,13 +21,13 @@ namespace wepapi_core.Data.migration_helper
                     b.Property<string>("Id")
                         .ValueGeneratedOnAdd();
 
-                    b.Property<DateTime?>("addhoc_from_date");
+                    b.Property<DateTime?>("adhoc_from_date");
 
-                    b.Property<string>("addhoc_net_salary");
+                    b.Property<string>("adhoc_net_salary");
 
-                    b.Property<string>("addhoc_tenure");
+                    b.Property<string>("adhoc_tenure");
 
-                    b.Property<DateTime?>("addhoc_to_date");
+                    b.Property<DateTime?>("adhoc_to_date");
 
                     b.Property<string>("adr1");
 
@@ -87,13 +87,13 @@ namespace wepapi_core.Data.migration_helper
                     b.Property<string>("Id")
                         .ValueGeneratedOnAdd();
 
-                    b.Property<DateTime?>("addhoc_from_date");
+                    b.Property<DateTime?>("adhoc_from_date");
 
-                    b.Property<string>("addhoc_net_salary");
+                    b.Property<string>("adhoc_net_salary");
 
-                    b.Property<string>("addhoc_tenure");
+                    b.Property<string>("adhoc_tenure");
 
-                    b.Property<DateTime?>("addhoc_to_date");
+                    b.Property<DateTime?>("adhoc_to_date");
 
                     b.Property<string>("adr1");
 

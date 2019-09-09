@@ -32,9 +32,9 @@ namespace wepapi_core.Models
         public string gen_basic_pay = "@_gen_basic_pay";
         public string gen_pay_scale_level = "@_gen_pay_scale_level";
         public string gen_payscale = "@_gen_payscale";
-        public string addhoc_net_salary = "@_addhoc_net_salary";
-        public string addhoc_tenure = "@_addhoc_tenure";
-        public string addhoc_from_date = "@_addhoc_from_date";
-        public string addhoc_to_date = "@_addhoc_to_date";
+        public string adhoc_net_salary = "@_adhoc_net_salary";
+        public string adhoc_tenure = "@_adhoc_tenure";
+        public string adhoc_from_date = "@_adhoc_from_date";
+        public string adhoc_to_date = "@_adhoc_to_date";
     }
 }

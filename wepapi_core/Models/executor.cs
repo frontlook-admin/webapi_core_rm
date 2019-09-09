@@ -122,10 +122,10 @@ namespace wepapi_core.Models
             cmd.Parameters.AddWithValue(e.gen_basic_pay,_e.gen_basic_pay);
             cmd.Parameters.AddWithValue(e.gen_pay_scale_level,_e.gen_pay_scale_level);
             cmd.Parameters.AddWithValue(e.gen_payscale,_e.gen_payscale);
-            cmd.Parameters.AddWithValue(e.addhoc_net_salary,_e.addhoc_net_salary);
-            cmd.Parameters.AddWithValue(e.addhoc_tenure,_e.addhoc_tenure);
-            cmd.Parameters.AddWithValue(e.addhoc_from_date,_e.addhoc_from_date);
-            cmd.Parameters.AddWithValue(e.addhoc_to_date,_e.addhoc_to_date);
+            cmd.Parameters.AddWithValue(e.adhoc_net_salary,_e.adhoc_net_salary);
+            cmd.Parameters.AddWithValue(e.adhoc_tenure,_e.adhoc_tenure);
+            cmd.Parameters.AddWithValue(e.adhoc_from_date,_e.adhoc_from_date);
+            cmd.Parameters.AddWithValue(e.adhoc_to_date,_e.adhoc_to_date);
             if (con.State != ConnectionState.Open)
             {
                 con.Open();
@@ -165,10 +165,10 @@ namespace wepapi_core.Models
             cmd.Parameters.AddWithValue(e.gen_basic_pay, _e.gen_basic_pay);
             cmd.Parameters.AddWithValue(e.gen_pay_scale_level, _e.gen_pay_scale_level);
             cmd.Parameters.AddWithValue(e.gen_payscale, _e.gen_payscale);
-            cmd.Parameters.AddWithValue(e.addhoc_net_salary, _e.addhoc_net_salary);
-            cmd.Parameters.AddWithValue(e.addhoc_tenure, _e.addhoc_tenure);
-            cmd.Parameters.AddWithValue(e.addhoc_from_date, _e.addhoc_from_date);
-            cmd.Parameters.AddWithValue(e.addhoc_to_date, _e.addhoc_to_date);
+            cmd.Parameters.AddWithValue(e.adhoc_net_salary, _e.adhoc_net_salary);
+            cmd.Parameters.AddWithValue(e.adhoc_tenure, _e.adhoc_tenure);
+            cmd.Parameters.AddWithValue(e.adhoc_from_date, _e.adhoc_from_date);
+            cmd.Parameters.AddWithValue(e.adhoc_to_date, _e.adhoc_to_date);
             if (con.State != ConnectionState.Open)
             {
                 con.Open();

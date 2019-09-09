@@ -11,7 +11,7 @@ namespace wepapi_core.Models
         {
         }
 
-        public employee_manager(string Id, long? intv_no, string f_name, string m_name, string l_name, string qualification, string school, string adr1, string adr2, string adr3, string st_no, string st_name, string city, string state, string pin, string employment_type, DateTime? interview_date, string online_diary_no, string dispatch_no, DateTime? join_date, DateTime? dated, string gen_applied_post, string gen_basic_pay, string gen_pay_scale_level, string gen_payscale, string addhoc_net_salary, string addhoc_tenure, DateTime? addhoc_from_date, DateTime? addhoc_to_date)
+        public employee_manager(string Id, long? intv_no, string f_name, string m_name, string l_name, string qualification, string school, string adr1, string adr2, string adr3, string st_no, string st_name, string city, string state, string pin, string employment_type, DateTime? interview_date, string online_diary_no, string dispatch_no, DateTime? join_date, DateTime? dated, string gen_applied_post, string gen_basic_pay, string gen_pay_scale_level, string gen_payscale, string adhoc_net_salary, string adhoc_tenure, DateTime? adhoc_from_date, DateTime? adhoc_to_date)
         {
             this.Id = Id;
             this.intv_no = intv_no;
@@ -38,10 +38,10 @@ namespace wepapi_core.Models
             this.gen_basic_pay = gen_basic_pay;
             this.gen_pay_scale_level = gen_pay_scale_level;
             this.gen_payscale = gen_payscale;
-            this.addhoc_net_salary = addhoc_net_salary;
-            this.addhoc_tenure = addhoc_tenure;
-            this.addhoc_from_date = addhoc_from_date;
-            this.addhoc_to_date = addhoc_to_date;
+            this.adhoc_net_salary = adhoc_net_salary;
+            this.adhoc_tenure = adhoc_tenure;
+            this.adhoc_from_date = adhoc_from_date;
+            this.adhoc_to_date = adhoc_to_date;
         }
 
         public string Id { get; set; }
@@ -69,9 +69,9 @@ namespace wepapi_core.Models
         public string gen_basic_pay { get; set; }
         public string gen_pay_scale_level { get; set; }
         public string gen_payscale { get; set; }
-        public string addhoc_net_salary { get; set; }
-        public string addhoc_tenure { get; set; }
-        public DateTime? addhoc_from_date { get; set; }
-        public DateTime? addhoc_to_date { get; set; }
+        public string adhoc_net_salary { get; set; }
+        public string adhoc_tenure { get; set; }
+        public DateTime? adhoc_from_date { get; set; }
+        public DateTime? adhoc_to_date { get; set; }
     }
 }

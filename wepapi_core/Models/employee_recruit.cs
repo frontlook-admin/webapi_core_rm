@@ -39,9 +39,9 @@ namespace wepapi_core.Models
         public string gen_basic_pay { get; set; }
         public string gen_pay_scale_level { get; set; }
         public string gen_payscale { get; set; }
-        public string addhoc_net_salary { get; set; }
-        public string addhoc_tenure { get; set; }
-        public Nullable<System.DateTime> addhoc_from_date { get; set; }
-        public Nullable<System.DateTime> addhoc_to_date { get; set; }
+        public string adhoc_net_salary { get; set; }
+        public string adhoc_tenure { get; set; }
+        public Nullable<System.DateTime> adhoc_from_date { get; set; }
+        public Nullable<System.DateTime> adhoc_to_date { get; set; }
     }
 }

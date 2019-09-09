@@ -36,10 +36,10 @@ namespace wepapi_core.Data.migration_helper
                     gen_basic_pay = table.Column<string>(nullable: true),
                     gen_pay_scale_level = table.Column<string>(nullable: true),
                     gen_payscale = table.Column<string>(nullable: true),
-                    addhoc_net_salary = table.Column<string>(nullable: true),
-                    addhoc_tenure = table.Column<string>(nullable: true),
-                    addhoc_from_date = table.Column<DateTime>(nullable: true),
-                    addhoc_to_date = table.Column<DateTime>(nullable: true)
+                    adhoc_net_salary = table.Column<string>(nullable: true),
+                    adhoc_tenure = table.Column<string>(nullable: true),
+                    adhoc_from_date = table.Column<DateTime>(nullable: true),
+                    adhoc_to_date = table.Column<DateTime>(nullable: true)
                 },
                 constraints: table =>
                 {
@@ -75,10 +75,10 @@ namespace wepapi_core.Data.migration_helper
                     gen_basic_pay = table.Column<string>(nullable: true),
                     gen_pay_scale_level = table.Column<string>(nullable: true),
                     gen_payscale = table.Column<string>(nullable: true),
-                    addhoc_net_salary = table.Column<string>(nullable: true),
-                    addhoc_tenure = table.Column<string>(nullable: true),
-                    addhoc_from_date = table.Column<DateTime>(nullable: true),
-                    addhoc_to_date = table.Column<DateTime>(nullable: true)
+                    adhoc_net_salary = table.Column<string>(nullable: true),
+                    adhoc_tenure = table.Column<string>(nullable: true),
+                    adhoc_from_date = table.Column<DateTime>(nullable: true),
+                    adhoc_to_date = table.Column<DateTime>(nullable: true)
                 },
                 constraints: table =>
                 {

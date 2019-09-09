@@ -19,10 +19,10 @@ namespace wepapi_core.Data
                 context.Database.EnsureCreated();
                 //context.Database.Migrate();
 
-                if (context.employee_recruit != null && context.employee_recruit.Any())
+                /*if (context.employee_recruit != null && context.employee_recruit.Any())
                 {
                     return;
-                }
+                }*/
 
             }
         }
