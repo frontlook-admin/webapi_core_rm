@@ -22,11 +22,11 @@ namespace wepapi_core
         public Startup(IConfiguration configuration, IConfiguration configuration1)
         {
             Configuration = configuration;
-            Configuration1 = configuration1;
+            //Configuration1 = configuration1;
         }
 
         public IConfiguration Configuration { get; }
-        public IConfiguration Configuration1 { get; }
+        //public IConfiguration Configuration1 { get; }
 
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)

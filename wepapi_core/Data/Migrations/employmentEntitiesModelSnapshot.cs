@@ -2,87 +2,19 @@
 using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
-using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using wepapi_core.Models;
 
-namespace wepapi_core.Data.migration_helper
+namespace wepapi_core.Migrations
 {
     [DbContext(typeof(employmentEntities))]
-    [Migration("20190909053539_InitialCreate")]
-    partial class InitialCreate
+    partial class employmentEntitiesModelSnapshot : ModelSnapshot
     {
-        protected override void BuildTargetModel(ModelBuilder modelBuilder)
+        protected override void BuildModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
                 .HasAnnotation("ProductVersion", "2.2.6-servicing-10079");
-
-            modelBuilder.Entity("wepapi_core.Models.employee_manager", b =>
-                {
-                    b.Property<string>("Id")
-                        .ValueGeneratedOnAdd();
-
-                    b.Property<DateTime?>("adhoc_from_date");
-
-                    b.Property<string>("adhoc_net_salary");
-
-                    b.Property<string>("adhoc_tenure");
-
-                    b.Property<DateTime?>("adhoc_to_date");
-
-                    b.Property<string>("adr1");
-
-                    b.Property<string>("adr2");
-
-                    b.Property<string>("adr3");
-
-                    b.Property<string>("city");
-
-                    b.Property<DateTime?>("dated");
-
-                    b.Property<string>("dispatch_no");
-
-                    b.Property<string>("employment_type");
-
-                    b.Property<string>("f_name");
-
-                    b.Property<string>("gen_applied_post");
-
-                    b.Property<string>("gen_basic_pay");
-
-                    b.Property<string>("gen_pay_scale_level");
-
-                    b.Property<string>("gen_payscale");
-
-                    b.Property<DateTime?>("interview_date");
-
-                    b.Property<long?>("intv_no");
-
-                    b.Property<DateTime?>("join_date");
-
-                    b.Property<string>("l_name");
-
-                    b.Property<string>("m_name");
-
-                    b.Property<string>("online_diary_no");
-
-                    b.Property<string>("pin");
-
-                    b.Property<string>("qualification");
-
-                    b.Property<string>("school");
-
-                    b.Property<string>("st_name");
-
-                    b.Property<string>("st_no");
-
-                    b.Property<string>("state");
-
-                    b.HasKey("Id");
-
-                    b.ToTable("employee_manager");
-                });
 
             modelBuilder.Entity("wepapi_core.Models.employee_recruit", b =>
                 {
@@ -167,35 +99,13 @@ namespace wepapi_core.Data.migration_helper
 
                     b.Property<string>("p_address");
 
-                    b.Property<string>("phone");
-
-                    b.HasKey("id");
-
-                    b.ToTable("users");
-                });
-
-            modelBuilder.Entity("wepapi_core.Models.user_manager", b =>
-                {
-                    b.Property<string>("id")
-                        .ValueGeneratedOnAdd();
-
-                    b.Property<string>("email");
-
-                    b.Property<string>("f_name");
-
-                    b.Property<string>("l_address");
-
-                    b.Property<string>("l_name");
-
-                    b.Property<string>("m_name");
-
-                    b.Property<string>("p_address");
+                    b.Property<string>("password");
 
                     b.Property<string>("phone");
 
                     b.HasKey("id");
 
-                    b.ToTable("user_manager");
+                    b.ToTable("user");
                 });
 
             modelBuilder.Entity("wepapi_core.Models.version", b =>

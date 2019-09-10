@@ -23,17 +23,22 @@ namespace wepapi_core.Models
             : base(options)
         {
         }
-    
+
+        public employmentEntities()
+        {
+        }
+
         protected override void OnModelCreating(ModelBuilder builder)
         {
             base.OnModelCreating(builder);
         }
-    
-        public DbSet<employee_recruit> employee_recruit { get; set; }
-        public DbSet<user> users { get; set; }
-        public DbSet<version> versions { get; set; }
-        public DbSet<employee_manager> employee_manager { get; set; }
-        public DbSet<user_manager> user_manager { get; set; }
-        
+
+        public virtual DbSet<employee_recruit> employee_recruit { get; set; }
+        public virtual DbSet<user> user { get; set; }
+        public virtual DbSet<version> versions { get; set; }
+        //public virtual DbSet<__efmigrationshistory> C__efmigrationshistory { get; set; }
+        //public DbSet<employee_manager> employee_manager { get; set; }
+        //public DbSet<user_manager> user_manager { get; set; }
+
     }
 }

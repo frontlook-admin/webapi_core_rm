@@ -14,6 +14,7 @@ namespace wepapi_core.Controllers
     public class employee_recruitController : ControllerBase
     {
         private readonly employmentEntities _context;
+        private readonly executor _executor;
 
         public employee_recruitController(employmentEntities context)
         {
@@ -28,51 +29,58 @@ namespace wepapi_core.Controllers
         }
 
         // GET: api/employee_recruit/5
-        [HttpGet("{id}")]
-        public async Task<ActionResult<employee_recruit>> Getemployee_recruit(string id)
+        [HttpGet("{_userid}/{id}")]
+        public async Task<ActionResult<employee_recruit>> Getemployee_recruit(string id, string _userid,string _password)
         {
-            var employee_recruit = await _context.employee_recruit.FindAsync(id);
-
-            if (employee_recruit == null)
+            if (_executor.validateUser(_userid, _password))
             {
-                return NotFound();
-            }
-
-            return employee_recruit;
-        }
-
-        // PUT: api/employee_recruit/5
-        [HttpPut("{id}")]
-        public async Task<IActionResult> Putemployee_recruit(string id, employee_recruit employee_recruit)
-        {
-            if (id != employee_recruit.Id)
-            {
-                return BadRequest();
-            }
-
-            _context.Entry(employee_recruit).State = EntityState.Modified;
-
-            try
-            {
-                await _context.SaveChangesAsync();
-            }
-            catch (DbUpdateConcurrencyException)
-            {
-                if (!employee_recruitExists(id))
+                var employee_recruit = await _context.employee_recruit.FindAsync(id);
+                if (employee_recruit == null)
                 {
                     return NotFound();
                 }
-                else
-                {
-                    throw;
-                }
-            }
 
-            return NoContent();
+                return employee_recruit;
+            }
+            return NotFound();
+        }
+
+        // PUT: api/employee_recruit/5
+        [HttpPut("{_userid}/{id}")]
+        public async Task<IActionResult> Putemployee_recruit(string id, string _userid, string _password,employee_recruit employee_recruit)
+        {
+            if (_executor.validateUser(_userid, _password))
+            {
+                if (id != employee_recruit.Id)
+                {
+                    return BadRequest();
+                }
+
+                _context.Entry(employee_recruit).State = EntityState.Modified;
+
+                try
+                {
+                    await _context.SaveChangesAsync();
+                }
+                catch (DbUpdateConcurrencyException)
+                {
+                    if (!employee_recruitExists(id))
+                    {
+                        return NotFound();
+                    }
+                    else
+                    {
+                        throw;
+                    }
+                }
+
+                return NoContent();
+            }
+            return BadRequest();
         }
 
         // POST: api/employee_recruit
-        [HttpPost]
+        [HttpPost("{_userid}/")]
         public async Task<ActionResult<employee_recruit>> Postemployee_recruit(employee_recruit employee_recruit)
         {
             _context.employee_recruit.Add(employee_recruit);
@@ -82,7 +90,7 @@ namespace wepapi_core.Controllers
         }
 
         // DELETE: api/employee_recruit/5
-        [HttpDelete("{id}")]
+        [HttpDelete("{_userid}/{id}")]
         public async Task<ActionResult<employee_recruit>> Deleteemployee_recruit(string id)
         {
             var employee_recruit = await _context.employee_recruit.FindAsync(id);
