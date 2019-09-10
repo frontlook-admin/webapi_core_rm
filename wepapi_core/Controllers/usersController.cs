@@ -1,6 +1,8 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using wepapi_core.Models;
@@ -12,16 +14,15 @@ namespace wepapi_core.Controllers
     public class usersController : ControllerBase
     {
         private readonly employmentEntities _context;
-        
 
-        /*public usersController(employmentEntities context)
+        public usersController(employmentEntities context)
         {
             _context = context;
         }
 
         // GET: api/users
         [HttpGet]
-        public async Task<ActionResult<IEnumerable<user>>> Getusers()
+        public async Task<ActionResult<IEnumerable<user>>> Getuser()
         {
             return await _context.user.ToListAsync();
         }
@@ -42,9 +43,9 @@ namespace wepapi_core.Controllers
 
         // PUT: api/users/5
         [HttpPut("{id}")]
-        public async Task<IActionResult> Putuser(string id, user user)
+        public async Task<IActionResult> Putuser(string auth, user user)
         {
-            if (id != user.id)
+            if (auth != user.gauth)
             {
                 return BadRequest();
             }
@@ -57,7 +58,7 @@ namespace wepapi_core.Controllers
             }
             catch (DbUpdateConcurrencyException)
             {
-                if (!userExists(id))
+                if (!userExists(auth))
                 {
                     return NotFound();
                 }
@@ -94,11 +95,11 @@ namespace wepapi_core.Controllers
             await _context.SaveChangesAsync();
 
             return user;
-        }*/
+        }
 
-        private bool userExists(string id)
+        private bool userExists(string auth)
         {
-            return _context.user.Any(e => e.id == id);
+            return _context.user.Any(e => e.gauth == auth);
         }
     }
 }

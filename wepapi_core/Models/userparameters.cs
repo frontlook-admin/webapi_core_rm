@@ -15,6 +15,8 @@ namespace wepapi_core.Models
         public string l_address = "@_l_address";
         public string email = "@_email";
         public string phone = "@_phone";
+        public string password = "@_password";
+        public string gauth = "@_auth";
 
         public IEnumerable<userparameters> par = new List<userparameters>();
         

@@ -11,7 +11,7 @@ namespace wepapi_core.Models
         {
         }
 
-        public user_manager(string id, string f_name, string m_name, string l_name, string p_address, string l_address, string email, string phone, string password)
+        public user_manager(string id, string f_name, string m_name, string l_name, string p_address, string l_address, string email, string phone, string password, string gauth)
         {
             this.id = id;
             this.f_name = f_name;
@@ -21,7 +21,8 @@ namespace wepapi_core.Models
             this.l_address = l_address;
             this.email = email;
             this.phone = phone;
-            this.password = password;
+            this.password = gauth;
+            this.gauth = password;
         }
 
         public user_manager(string id)
@@ -38,5 +39,6 @@ namespace wepapi_core.Models
         public string email { get; set; }
         public string phone { get; set; }
         public string password { get; set; }
+        public string gauth { get; set; }
     }
 }

@@ -15,7 +15,7 @@
         "ASPNETCORE_ENVIRONMENT": "Development"
       },
       "launchBrowser": true,
-      "launchUrl": "api/user"
+      "launchUrl": "api/users"
     },
     "wepapi_core": {
       "commandName": "Project",

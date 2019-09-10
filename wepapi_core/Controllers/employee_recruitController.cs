@@ -14,7 +14,7 @@ namespace wepapi_core.Controllers
     public class employee_recruitController : ControllerBase
     {
         private readonly employmentEntities _context;
-        private readonly executor _executor;
+        //private readonly executor _executor;
 
         public employee_recruitController(employmentEntities context)
         {
@@ -32,8 +32,8 @@ namespace wepapi_core.Controllers
         [HttpGet("{_userid}/{id}")]
         public async Task<ActionResult<employee_recruit>> Getemployee_recruit(string id, string _userid,string _password)
         {
-            if (_executor.validateUser(_userid, _password))
-            {
+            //if (_executor.validateUser(_userid, _password))
+            //{
                 var employee_recruit = await _context.employee_recruit.FindAsync(id);
                 if (employee_recruit == null)
                 {
@@ -41,16 +41,16 @@ namespace wepapi_core.Controllers
                 }
 
                 return employee_recruit;
-            }
-            return NotFound();
+            //}
+            //return NotFound();
         }
 
         // PUT: api/employee_recruit/5
         [HttpPut("{_userid}/{id}")]
         public async Task<IActionResult> Putemployee_recruit(string id, string _userid, string _password,employee_recruit employee_recruit)
         {
-            if (_executor.validateUser(_userid, _password))
-            {
+            //if (_executor.validateUser(_userid, _password))
+            //{
                 if (id != employee_recruit.Id)
                 {
                     return BadRequest();
@@ -75,8 +75,8 @@ namespace wepapi_core.Controllers
                 }
 
                 return NoContent();
-            }
-            return BadRequest();
+           // }
+            //return BadRequest();
         }
 
         // POST: api/employee_recruit

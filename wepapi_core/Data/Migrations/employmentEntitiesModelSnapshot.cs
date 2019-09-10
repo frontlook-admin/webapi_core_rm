@@ -91,6 +91,8 @@ namespace wepapi_core.Migrations
 
                     b.Property<string>("f_name");
 
+                    b.Property<string>("gauth");
+
                     b.Property<string>("l_address");
 
                     b.Property<string>("l_name");

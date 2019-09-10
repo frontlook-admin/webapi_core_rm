@@ -3,7 +3,7 @@ using Microsoft.EntityFrameworkCore.Migrations;
 
 namespace wepapi_core.Migrations
 {
-    public partial class migration : Migration
+    public partial class Migration_Helper : Migration
     {
         protected override void Up(MigrationBuilder migrationBuilder)
         {
@@ -51,14 +51,15 @@ namespace wepapi_core.Migrations
                 columns: table => new
                 {
                     id = table.Column<string>(nullable: false),
-                    f_name = table.Column<string>(nullable: false),
+                    f_name = table.Column<string>(nullable: true),
                     m_name = table.Column<string>(nullable: true),
-                    l_name = table.Column<string>(nullable: false),
-                    p_address = table.Column<string>(nullable: false),
-                    l_address = table.Column<string>(nullable: false),
-                    email = table.Column<string>(nullable: false),
-                    phone = table.Column<string>(nullable: false),
-                    password = table.Column<string>(nullable: false)
+                    l_name = table.Column<string>(nullable: true),
+                    p_address = table.Column<string>(nullable: true),
+                    l_address = table.Column<string>(nullable: true),
+                    email = table.Column<string>(nullable: true),
+                    phone = table.Column<string>(nullable: true),
+                    password = table.Column<string>(nullable: true),
+                    gauth = table.Column<string>(nullable: true)
                 },
                 constraints: table =>
                 {

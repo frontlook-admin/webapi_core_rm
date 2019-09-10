@@ -15,7 +15,6 @@ namespace wepapi_core.Models
     using System;
     using Microsoft.EntityFrameworkCore;
     using System.Linq;
-    using MySql.Data.EntityFrameworkCore.Migrations;
     
     public class employmentEntities : DbContext
     {

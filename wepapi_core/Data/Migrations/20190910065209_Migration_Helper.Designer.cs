@@ -9,8 +9,8 @@ using wepapi_core.Models;
 namespace wepapi_core.Migrations
 {
     [DbContext(typeof(employmentEntities))]
-    [Migration("20190909142950_migration")]
-    partial class migration
+    [Migration("20190910065209_Migration_Helper")]
+    partial class Migration_Helper
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
@@ -92,6 +92,8 @@ namespace wepapi_core.Migrations
                     b.Property<string>("email");
 
                     b.Property<string>("f_name");
+
+                    b.Property<string>("gauth");
 
                     b.Property<string>("l_address");
 

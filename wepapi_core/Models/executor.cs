@@ -11,7 +11,7 @@ namespace wepapi_core.Models
 {
     public class executor
     {
-        static string cs = ConfigurationManager.ConnectionStrings["cs"].ConnectionString;
+        static string cs = System.Configuration.ConfigurationManager.ConnectionStrings["cs"].ConnectionString;
         static MySqlConnection con = new MySqlConnection(cs);
         MySqlCommand cmd = new MySqlCommand("", con);
 
@@ -24,6 +24,7 @@ namespace wepapi_core.Models
 
         public bool validateUser(string _userid, string _password)
         {
+            
             cmd.CommandText = "select validate_user ('"+_userid+"','"+_password+"')";
             //cmd.Parameters.AddWithValue(u.id, userid);
             cmd.CommandType = CommandType.StoredProcedure;
