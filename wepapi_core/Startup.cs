@@ -1,4 +1,5 @@
-﻿using Microsoft.AspNetCore.Builder;
+﻿using System.Net;
+using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.HttpOverrides;
 using Microsoft.AspNetCore.Mvc;
@@ -27,8 +28,11 @@ namespace webapi_core_rm
             services.AddDbContext<employmentEntities>(
                 options => options.UseMySQL(Configuration.GetConnectionString("cs")));
             //services.AddDbContext<employmentEntities>(
-                //options => options.UseMySQL(Configuration1.GetConnectionString(ConfigurationManager.ConnectionStrings["cs"].ConnectionString)));
-
+            //options => options.UseMySQL(Configuration1.GetConnectionString(ConfigurationManager.ConnectionStrings["cs"].ConnectionString)));
+            /*services.Configure<ForwardedHeadersOptions>(options =>
+            {
+                options.KnownProxies.Add(IPAddress.Parse("192.168.0.19"));
+            });*/
             services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_2);
         }
 
