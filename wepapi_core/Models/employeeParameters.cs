@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 
-namespace wepapi_core.Models
+namespace webapi_core_rm.Models
 {
     public class employeeParameters
     {

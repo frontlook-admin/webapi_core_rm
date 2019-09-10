@@ -7,7 +7,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace wepapi_core.Models
+namespace webapi_core_rm.Models
 {
     using System;
     using System.Collections.Generic;

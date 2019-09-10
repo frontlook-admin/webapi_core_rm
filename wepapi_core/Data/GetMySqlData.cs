@@ -5,9 +5,9 @@ using System.Threading.Tasks;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.DependencyInjection;
-using wepapi_core.Models;
+using webapi_core_rm.Models;
 
-namespace wepapi_core.Data
+namespace webapi_core_rm.Data
 {
     public class GetMySqlData
     {

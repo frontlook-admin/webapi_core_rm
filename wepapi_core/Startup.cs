@@ -4,10 +4,10 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
-using wepapi_core.Data;
-using wepapi_core.Models;
+using webapi_core_rm.Data;
+using webapi_core_rm.Models;
 
-namespace wepapi_core
+namespace webapi_core_rm
 {
     public class Startup
     {

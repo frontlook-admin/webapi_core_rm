@@ -4,9 +4,9 @@ using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
-using wepapi_core.Models;
+using webapi_core_rm.Models;
 
-namespace wepapi_core.Migrations
+namespace webapi_core_rm.Migrations
 {
     [DbContext(typeof(employmentEntities))]
     [Migration("20190910065209_Migration_Helper")]
@@ -18,7 +18,7 @@ namespace wepapi_core.Migrations
             modelBuilder
                 .HasAnnotation("ProductVersion", "2.2.6-servicing-10079");
 
-            modelBuilder.Entity("wepapi_core.Models.employee_recruit", b =>
+            modelBuilder.Entity("webapi_core_rm.Models.employee_recruit", b =>
                 {
                     b.Property<string>("Id")
                         .ValueGeneratedOnAdd();
@@ -84,7 +84,7 @@ namespace wepapi_core.Migrations
                     b.ToTable("employee_recruit");
                 });
 
-            modelBuilder.Entity("wepapi_core.Models.user", b =>
+            modelBuilder.Entity("webapi_core_rm.Models.user", b =>
                 {
                     b.Property<string>("id")
                         .ValueGeneratedOnAdd();
@@ -112,7 +112,7 @@ namespace wepapi_core.Migrations
                     b.ToTable("user");
                 });
 
-            modelBuilder.Entity("wepapi_core.Models.version", b =>
+            modelBuilder.Entity("webapi_core_rm.Models.version", b =>
                 {
                     b.Property<int>("id")
                         .ValueGeneratedOnAdd();

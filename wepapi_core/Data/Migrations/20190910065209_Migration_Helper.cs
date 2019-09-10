@@ -1,7 +1,7 @@
 ﻿using System;
 using Microsoft.EntityFrameworkCore.Migrations;
 
-namespace wepapi_core.Migrations
+namespace webapi_core_rm.Migrations
 {
     public partial class Migration_Helper : Migration
     {

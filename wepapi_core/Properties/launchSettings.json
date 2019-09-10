@@ -17,7 +17,7 @@
       "launchBrowser": true,
       "launchUrl": "api/users"
     },
-    "wepapi_core": {
+    "webapi_core_rm": {
       "commandName": "Project",
       "launchBrowser": true,
       "launchUrl": "api/values",

@@ -7,7 +7,7 @@ using MySql.Data.Common;
 using MySql.Data.Types;
 using MySql.Data.common;
 
-namespace wepapi_core.Models
+namespace webapi_core_rm.Models
 {
     public class executor
     {
