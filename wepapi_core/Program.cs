@@ -20,9 +20,7 @@ namespace webapi_core_rm
                 .UseIISIntegration()
                 .UseStartup<Startup>()
                 .Build();
-
             host.Run();*/
-            CreateWebHostBuilder(args).Build().Run();
             /*var host = new WebHostBuilder()
                 .UseKestrel()
                 .UseContentRoot(Directory.GetCurrentDirectory())
@@ -50,12 +48,18 @@ namespace webapi_core_rm
                 .Build();
 
             host.Run();*/
+
+            CreateWebHostBuilder(args).Build().Run();
         }
 
         public static IWebHostBuilder CreateWebHostBuilder(string[] args) =>
             WebHost.CreateDefaultBuilder(args)
                 .UseUrls("http://localhost:5000", "http://103.127.157.109:5000", "https://103.127.157.109:5001" )
                 .UseStartup<Startup>();
+
+
+        
+
 
         /*var host = new WebHostBuilder()
             .UseKestrel()
@@ -66,6 +70,6 @@ namespace webapi_core_rm
 
         host.Run();*/
 
-        
+
     }
 }

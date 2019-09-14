@@ -30,7 +30,7 @@ namespace webapi_core_rm.Controllers
 
         // GET: api/employee_recruit/5
         [HttpGet("{_userid}/{id}")]
-        public async Task<ActionResult<employee_recruit>> Getemployee_recruit(string id, string _userid,string _password)
+        public async Task<ActionResult<employee_recruit>> Getemployee_recruit(string id)
         {
             //if (_executor.validateUser(_userid, _password))
             //{
@@ -46,8 +46,8 @@ namespace webapi_core_rm.Controllers
         }
 
         // PUT: api/employee_recruit/5
-        [HttpPut("{_userid}/{id}")]
-        public async Task<IActionResult> Putemployee_recruit(string id, string _userid, string _password,employee_recruit employee_recruit)
+        [HttpPut("{_employee_recruit}/{id}")]
+        public async Task<IActionResult> Putemployee_recruit(string id, employee_recruit employee_recruit)
         {
             //if (_executor.validateUser(_userid, _password))
             //{
