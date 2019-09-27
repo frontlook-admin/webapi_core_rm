@@ -6,11 +6,11 @@ using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using webapi_core_rm.Models;
 
-namespace webapi_core_rm.Migrations
+namespace webapi_core_rm.Data.Migrations
 {
     [DbContext(typeof(employmentEntities))]
-    [Migration("20190910065209_Migration_Helper")]
-    partial class Migration_Helper
+    [Migration("20190927032331_MigrationSetting")]
+    partial class MigrationSetting
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
@@ -89,23 +89,30 @@ namespace webapi_core_rm.Migrations
                     b.Property<string>("id")
                         .ValueGeneratedOnAdd();
 
-                    b.Property<string>("email");
+                    b.Property<string>("email")
+                        .IsRequired();
 
-                    b.Property<string>("f_name");
+                    b.Property<string>("f_name")
+                        .IsRequired();
 
                     b.Property<string>("gauth");
 
-                    b.Property<string>("l_address");
+                    b.Property<string>("l_address")
+                        .IsRequired();
 
-                    b.Property<string>("l_name");
+                    b.Property<string>("l_name")
+                        .IsRequired();
 
                     b.Property<string>("m_name");
 
-                    b.Property<string>("p_address");
+                    b.Property<string>("p_address")
+                        .IsRequired();
 
-                    b.Property<string>("password");
+                    b.Property<string>("password")
+                        .IsRequired();
 
-                    b.Property<string>("phone");
+                    b.Property<string>("phone")
+                        .IsRequired();
 
                     b.HasKey("id");
 

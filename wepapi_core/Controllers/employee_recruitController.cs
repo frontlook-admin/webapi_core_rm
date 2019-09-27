@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
@@ -14,7 +15,7 @@ namespace webapi_core_rm.Controllers
     public class employee_recruitController : ControllerBase
     {
         private readonly employmentEntities _context;
-        //private readonly executor _executor;
+        private readonly executor _executor;
 
         public employee_recruitController(employmentEntities context)
         {
@@ -25,11 +26,13 @@ namespace webapi_core_rm.Controllers
         [HttpGet]
         public async Task<ActionResult<IEnumerable<employee_recruit>>> Getemployee_recruit()
         {
-            return await _context.employee_recruit.ToListAsync();
+            //if(_executor.validateUser_auth(_gauth))
+                return await _context.employee_recruit.ToListAsync();
+            //return BadRequest();
         }
 
         // GET: api/employee_recruit/5
-        [HttpGet("{_userid}/{id}")]
+        [HttpGet("{_employee_recruit}/{id}")]
         public async Task<ActionResult<employee_recruit>> Getemployee_recruit(string id)
         {
             //if (_executor.validateUser(_userid, _password))
@@ -80,7 +83,7 @@ namespace webapi_core_rm.Controllers
         }
 
         // POST: api/employee_recruit
-        [HttpPost("{_userid}/")]
+        [HttpPost("{_employee_recruit}/")]
         public async Task<ActionResult<employee_recruit>> Postemployee_recruit(employee_recruit employee_recruit)
         {
             _context.employee_recruit.Add(employee_recruit);

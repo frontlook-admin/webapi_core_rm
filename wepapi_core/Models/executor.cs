@@ -40,6 +40,24 @@ namespace webapi_core_rm.Models
             return false;
         }
 
+        public bool validateUser_auth(string _auth)
+        {
+
+            cmd.CommandText = "select validate_user_auth ('" + _auth + "')";
+            //cmd.Parameters.AddWithValue(u.id, userid);
+            cmd.CommandType = CommandType.StoredProcedure;
+            if (con.State != ConnectionState.Open)
+            {
+                con.Open();
+            }
+            int r = cmd.ExecuteNonQuery();
+            if (r.Equals(1))
+            {
+                return true;
+            }
+            return false;
+        }
+
         public int PostUser(user_manager _u)
         {
             userparameters u = new userparameters();

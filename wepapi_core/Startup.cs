@@ -6,8 +6,11 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
+using MySql.Data.EntityFrameworkCore.Infraestructure;
 using webapi_core_rm.Data;
+using webapi_core_rm.Interfaces;
 using webapi_core_rm.Models;
+using webapi_core_rm.services;
 
 namespace webapi_core_rm
 {
@@ -26,13 +29,19 @@ namespace webapi_core_rm
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddDbContext<employmentEntities>(
-                options => options.UseMySQL(Configuration.GetConnectionString("cs")));
+                MySQLDbContextOptionsBuilder=> MySQLDbContextOptionsBuilder.UseMySQL(Configuration.GetConnectionString("cs"))
+                );
+            /*services.AddDbContext<employmentEntities>(
+                options => options
+                .UseMySQL(Configuration.GetConnectionString("cs"))
+                );*/
             //services.AddDbContext<employmentEntities>(
             //options => options.UseMySQL(Configuration1.GetConnectionString(ConfigurationManager.ConnectionStrings["cs"].ConnectionString)));
             /*services.Configure<ForwardedHeadersOptions>(options =>
             {
                 options.KnownProxies.Add(IPAddress.Parse("192.168.0.19"));
             });*/
+            
             services.AddAuthentication().AddGoogle(options =>
             {
                 IConfigurationSection googleAuthNSection =
@@ -41,6 +50,8 @@ namespace webapi_core_rm
                 options.ClientId = googleAuthNSection["ClientId"];
                 options.ClientSecret = googleAuthNSection["ClientSecret"];
             });
+            //services.AddSingleton<userinterface,userservices>();
+            //services.AddMvcCore().AddAuthorization().SetCompatibilityVersion(CompatibilityVersion.Version_2_2);
             services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_2);
         }
 
