@@ -1,9 +1,9 @@
 ﻿using System;
 using Microsoft.EntityFrameworkCore.Migrations;
 
-namespace webapi_core_rm.Migrations
+namespace webapi_core_rm.Data.Migrations
 {
-    public partial class Migration_Helper : Migration
+    public partial class MigrationSetting : Migration
     {
         protected override void Up(MigrationBuilder migrationBuilder)
         {
@@ -51,14 +51,14 @@ namespace webapi_core_rm.Migrations
                 columns: table => new
                 {
                     id = table.Column<string>(nullable: false),
-                    f_name = table.Column<string>(nullable: true),
+                    f_name = table.Column<string>(nullable: false),
                     m_name = table.Column<string>(nullable: true),
-                    l_name = table.Column<string>(nullable: true),
-                    p_address = table.Column<string>(nullable: true),
-                    l_address = table.Column<string>(nullable: true),
-                    email = table.Column<string>(nullable: true),
-                    phone = table.Column<string>(nullable: true),
-                    password = table.Column<string>(nullable: true),
+                    l_name = table.Column<string>(nullable: false),
+                    p_address = table.Column<string>(nullable: false),
+                    l_address = table.Column<string>(nullable: false),
+                    email = table.Column<string>(nullable: false),
+                    phone = table.Column<string>(nullable: false),
+                    password = table.Column<string>(nullable: false),
                     gauth = table.Column<string>(nullable: true)
                 },
                 constraints: table =>
