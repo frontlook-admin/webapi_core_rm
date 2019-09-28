@@ -10,7 +10,7 @@ using webapi_core_rm.Models;
 
 namespace webapi_core_rm.Controllers
 {
-    [Authorize]
+    
     [Route("api/[controller]")]
     [ApiController]
     public class employee_recruitController : ControllerBase

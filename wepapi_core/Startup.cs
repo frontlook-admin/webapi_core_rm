@@ -42,14 +42,14 @@ namespace webapi_core_rm
                 options.KnownProxies.Add(IPAddress.Parse("192.168.0.19"));
             });*/
             
-            services.AddAuthentication().AddGoogle(options =>
+            /*services.AddAuthentication().AddGoogle(options =>
             {
                 IConfigurationSection googleAuthNSection =
                     Configuration.GetSection("Authentication:Google");
 
                 options.ClientId = googleAuthNSection["ClientId"];
                 options.ClientSecret = googleAuthNSection["ClientSecret"];
-            });
+            });*/
             //services.AddSingleton<userinterface,userservices>();
             //services.AddMvcCore().AddAuthorization().SetCompatibilityVersion(CompatibilityVersion.Version_2_2);
             services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_2);
