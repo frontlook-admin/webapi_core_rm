@@ -7,6 +7,8 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
+using System.ComponentModel.DataAnnotations;
+
 namespace webapi_core_rm.Models
 {
     using System;
@@ -37,14 +39,22 @@ namespace webapi_core_rm.Models
             this.id = id;
         }
 
+        [Key]
         public string id { get; set; }
+        [Required]
         public string f_name { get; set; }
         public string m_name { get; set; }
+        [Required]
         public string l_name { get; set; }
+        [Required]
         public string p_address { get; set; }
+        [Required]
         public string l_address { get; set; }
+        [Required]
         public string email { get; set; }
+        [Required]
         public string phone { get; set; }
+        [Required]
         public string password { get; set; }
         public string gauth { get; set; }
     }
