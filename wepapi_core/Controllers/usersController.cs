@@ -80,7 +80,7 @@ namespace webapi_core_rm.Controllers
             _context.user.Add(user);
             await _context.SaveChangesAsync();
 
-            return CreatedAtAction($"Getuser", new { id = user.id }, user);
+            return CreatedAtAction("Getuser", new { id = user.id }, user);
         }
 
         // DELETE: api/users/5
